@@ -71,7 +71,7 @@ namespace DataStructures
 			if (match == null)
 				throw new ArgumentNullException();
 
-			for (int i = 0; i < index; i++)
+				for (int i = 0; i < index; i++)
 				if (match(array[i]))
 				{
 					Remove(array[i]);

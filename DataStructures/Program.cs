@@ -1,13 +1,10 @@
-﻿
-
-using DataStructures;
-
-DataStructures.List<int> list = new DataStructures.List<int>();
+﻿using DataStructures;
 
 
-list.Add(120);
-list.Add(10);
-list.Add(110);
+Trie a = new Trie();
+
+a.Add("ali");
+a.Add("aliye");
+a.Add("mehmet");
 
 
-list.Print();
