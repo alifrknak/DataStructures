@@ -19,6 +19,7 @@
 	public bool Contains(string word)
 	{
 		Trie current = this;
+
 		for (int i = 0; i < word.Length; i++)
 			if (!current.Children.TryGetValue(word[i], out current))
 				return false;
