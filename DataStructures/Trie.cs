@@ -12,7 +12,7 @@
 		{
 			if (!current.Children.TryGetValue(c, out var child))
 				current.Children.Add(c, child = new Trie());
-			current = child;
+			current = child;e
 		}
 		current.IsEndOfWord = true;
 	}
@@ -26,7 +26,6 @@
 		return current.IsEndOfWord;
 	}
 	
-
 	public void Print(Trie trie)
 	{
 		if (trie is null)
