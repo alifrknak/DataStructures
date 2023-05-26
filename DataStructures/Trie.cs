@@ -36,7 +36,7 @@
 			if (!current.Children.TryGetValue(word[i], out current))
 				return false;
 
-			if ((current.Children.Count > 1) && (i == word.Length - 1 || current.IsEndOfWord))
+			if ((current.Children.Count > 1) && i< word.Length-1)
 			{
 				delete = word[i + 1];
 				temp = current;
@@ -64,4 +64,4 @@
 		foreach (var i in trie.Children.Values)
 			Print(i);
 	}
-}
+}	

@@ -1,21 +1,31 @@
 ﻿using DataStructures;
+using System.Security.Cryptography;
 
-Trie a = new Trie();
-a.Add("ali");
-a.Add("aliye");
-a.Add("veli");
-a.Add("vali");
-a.Add("fatma");
-a.Add("fatih");
-a.Add("samet");
-a.Add("veliye");
+class Program
+{
 
+	static void Main(string[] args)
+	{
+		Trie a = new Trie();
+		
+		a.Add("ali");
+		a.Add("aliye");
+		a.Add("veli");
+		a.Add("vali");
+		a.Add("fatma");
+		a.Add("fatih");
+		a.Add("samet");
+		a.Add("veliye");
+		a.Add("alim");
 
-Console.WriteLine("deleted  "+a.Remove(" "));
-Console.WriteLine("deleted  "+a.Remove("alii"));
-Console.WriteLine("deleted  "+a.Remove("vli"));
-Console.WriteLine("deleted  "+a.Remove("fat")); //hata  veliyor
-Console.WriteLine("deleted  "+a.Remove("fa"));
-a.Print(a);
+        Console.WriteLine(a.Remove("ali"));
+        Console.WriteLine(a.Contains("ali"));
+        Console.WriteLine(a.Contains("fat"));
+        Console.WriteLine(a.Contains("sam"));
+        Console.WriteLine(a.Contains("al"));
+        Console.WriteLine(a.Contains("alii"));
+        Console.WriteLine(a.Contains("al "));
+        Console.WriteLine(a.Contains("va"));
 
-
+    }
+}
