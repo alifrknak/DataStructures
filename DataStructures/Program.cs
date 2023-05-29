@@ -20,9 +20,9 @@ class Program
 		aa.AddLast(10);
 		aa.AddLast(4);
 
-        foreach (var item in aa)
-        {
-            Console.Write(item+" ");
-        }
+        Console.WriteLine(aa.First.Value);
+        Console.WriteLine(aa.Last.Value);
+        Console.WriteLine(aa.Count);
+
     }
 }

@@ -25,12 +25,14 @@ public class Link<T>: IEnumerable<T>
         {
             _head = new Node(item);
             _tail = _head;
+            _first = _head;
             return _head;
         }
         Node? temp = _tail;
 		_tail.Next = new Node(item);
         _tail = _tail.Next;
         _tail.Previous = temp;
+        _last = _tail; 
         return _tail;
     }
 
