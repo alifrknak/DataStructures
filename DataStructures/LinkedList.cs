@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-public class Link<T> : IEnumerable<T>
+public class LinkedList<T> : IEnumerable<T>
 {
 	public class Node
 	{
@@ -63,6 +63,17 @@ public class Link<T> : IEnumerable<T>
 		temp.Next.Previous = temp;
 
 		return true;
+	}
+	public bool Contains(T item)
+	{
+		Node? temp = _head;
+		while (temp is not null)
+		{
+			if (temp.Value.Equals(item))
+				return true;
+			temp = temp.Next;
+		}
+		return false;
 	}
 	public IEnumerator<T> GetEnumerator()
 	{
