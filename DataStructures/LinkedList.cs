@@ -1,5 +1,8 @@
 ﻿using System.Collections;
 
+
+namespace DataStructures;
+
 public class LinkedList<T> : IEnumerable<T>
 {
 	public class Node
@@ -25,6 +28,7 @@ public class LinkedList<T> : IEnumerable<T>
 			_head = new Node(item);
 			_tail = _head;
 			_last = _head;
+			_count++;
 			return _head;
 		}
 		Node? temp = _tail;
@@ -33,6 +37,7 @@ public class LinkedList<T> : IEnumerable<T>
 		_tail.Previous = temp;
 		temp.Next = _tail;
 		_last = _tail;
+		_count++;
 		return _tail;
 	}
 
@@ -45,6 +50,7 @@ public class LinkedList<T> : IEnumerable<T>
 		{
 			_head = _head.Next;
 			_head.Previous = null;
+			_count--;
 			return true;
 		}
 		while (temp.Next is not null && !temp.Next.Value.Equals(item))
@@ -56,12 +62,13 @@ public class LinkedList<T> : IEnumerable<T>
 		{
 			temp.Next = null;
 			_last = temp;
+			_count--;
 			return true;
 		}
 
 		temp.Next = temp.Next.Next;
 		temp.Next.Previous = temp;
-
+		_count--;
 		return true;
 	}
 	public bool Contains(T item)
@@ -74,6 +81,25 @@ public class LinkedList<T> : IEnumerable<T>
 			temp = temp.Next;
 		}
 		return false;
+	}
+	public Node Find(T item)
+	{
+		Node? temp = _head;
+		while (temp is not null)
+		{
+			if (temp.Value.Equals(item))
+				return temp;
+			temp = temp.Next;
+		}
+		return null;
+	} 
+	public void Clear()
+	{
+		_count = 0;
+		_head = null;
+		_tail= null;
+		_last = null;
+		
 	}
 	public IEnumerator<T> GetEnumerator()
 	{
