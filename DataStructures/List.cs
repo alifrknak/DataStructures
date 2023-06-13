@@ -119,14 +119,14 @@ namespace DataStructures
 				Console.Write(array[i] + " ");
 			Console.WriteLine();
 		}
-		private void Expand(int addCapacity)
+		private void Extent(int addCapacity)
 		{
 			T[] values = new T[array.Length + addCapacity];
 			for (int i = 0; i < index; i++)
 				values[i] = array[i];
 			array = values;
 		}
-		private void Abridge(int removeCapacity)
+		private void Shrink(int removeCapacity)
 		{
 			T[] values = new T[array.Length - removeCapacity];
 			for (int i = 0; i < index; i++)
