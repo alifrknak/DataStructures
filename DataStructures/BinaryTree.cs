@@ -7,11 +7,10 @@ namespace DataStructures
 
 		class Node
 		{
-			public int data;
-			public Node left;
-			public Node right;
-
-			public Node(int data) => this.data = data;
+            public int Data { get; set; }
+            public Node Left { get; set; }
+			public Node Right { get; set; }
+			public Node(int data) => this.Data = data;
 			
 		}
 
@@ -36,45 +35,45 @@ namespace DataStructures
 		private int max(Node node)
 		{
 			var r = node;
-			while (r.right != null)
-				r = r.right;
-			return r.data;
+			while (r.Right != null)
+				r = r.Right;
+			return r.Data;
 
 		}
 		private int min(Node node)
 		{
 			var r = node;
-			while (r.left != null)
-				r = r.left;
-			return r.data;
+			while (r.Left != null)
+				r = r.Left;
+			return r.Data;
 		}
 		private Node remove(Node node, int a)
 		{
 			if (node == null)
 				return null;
 
-			if (node.data == a)
+			if (node.Data == a)
 			{
 
-				if (node.left == null && node.right == null)
+				if (node.Left == null && node.Right == null)
 					return null;
 
-				if (node.left != null)
+				if (node.Left != null)
 				{
-					node.data = max(node.left);
-					node.left = remove(node.left, max(node.left));
+					node.Data = max(node.Left);
+					node.Left = remove(node.Left, max(node.Left));
 				}
 				else
 				{
-					node.data = min(node.right);
-					node.right = remove(node.right, min(node.right));
+					node.Data = min(node.Right);
+					node.Right = remove(node.Right, min(node.Right));
 				}
 			}
 
-			if (node.data < a)
-				node.right = remove(node.right, a);
+			if (node.Data < a)
+				node.Right = remove(node.Right, a);
 			else
-				node.left = remove(node.left, a);
+				node.Left = remove(node.Left, a);
 			return node;
 
 		}
@@ -87,10 +86,10 @@ namespace DataStructures
 				return node;
 			}
 
-			if (a < node.data)
-				node.left = add(node.left, a);
+			if (a < node.Data)
+				node.Left = add(node.Left, a);
 			else
-				node.right = add(node.right, a);
+				node.Right = add(node.Right, a);
 
 			return node;
 		}
@@ -100,9 +99,9 @@ namespace DataStructures
 			if (node == null)
 				return;
 
-			traverse(node.left);
-			Console.Write(node.data + " ");
-			traverse(node.right);
+			traverse(node.Left);
+			Console.Write(node.Data + " ");
+			traverse(node.Right);
 		}
 	}
 }
