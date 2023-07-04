@@ -27,7 +27,7 @@ namespace DataStructures
 				array[index++] = item;
 				return;
 			}
-			Expand(array.Length);
+			Extent(array.Length);
 			array[index++] = item;
 		}
 		public void AddRange(IEnumerable<T> collection)
@@ -52,7 +52,7 @@ namespace DataStructures
 		{
 			int rate = 2;
 			if (index < array.Length / rate)
-				Abridge(array.Length / rate);
+				Shrink(array.Length / rate);
 
 			T[] values = new T[array.Length];
 			int valueIndex = 0;

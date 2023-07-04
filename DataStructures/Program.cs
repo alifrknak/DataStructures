@@ -1,14 +1,12 @@
-﻿using DataStructures;
-using System.IO.Compression;
-using System.Security.Cryptography;
+﻿using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace DataStructures;
-class Program
-{
 
+partial class Program
+{
 	static void Main(string[] args)
 	{
-		
-		
+        Console.WriteLine();
     }
 }
