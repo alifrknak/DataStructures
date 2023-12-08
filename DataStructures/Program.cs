@@ -7,8 +7,7 @@ partial class Program
 {
 	static void Main(string[] args)
 	{
-		Console.WriteLine();
-		new System.Collections.Generic.HashSet<int>();
-	}
+        Console.WriteLine("");
+    }
 }
  
